@@ -1,0 +1,70 @@
+﻿@model _2aProvaEsame.Models.DatiRichiesta
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>DatiRichiesta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DatiRichiestaId" />
+            <div class="form-group">
+                <label asp-for="RichiedenteId" class="control-label"></label>
+                <select asp-for="RichiedenteId" class="form-control" asp-items="ViewBag.RichiedenteId"></select>
+                <span asp-validation-for="RichiedenteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssegnatoeId" class="control-label"></label>
+                <select asp-for="AssegnatoeId" class="form-control" asp-items="ViewBag.AssegnatoeId"></select>
+                <span asp-validation-for="AssegnatoeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRichiesta" class="control-label"></label>
+                <input asp-for="DataRichiesta" class="form-control" />
+                <span asp-validation-for="DataRichiesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataChiusura" class="control-label"></label>
+                <input asp-for="DataChiusura" class="form-control" />
+                <span asp-validation-for="DataChiusura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatoRichiesta" class="control-label"></label>
+                <input asp-for="StatoRichiesta" class="form-control" />
+                <span asp-validation-for="StatoRichiesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TitoloRichiesta" class="control-label"></label>
+                <input asp-for="TitoloRichiesta" class="form-control" />
+                <span asp-validation-for="TitoloRichiesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescrizioneRichiesta" class="control-label"></label>
+                <input asp-for="DescrizioneRichiesta" class="form-control" />
+                <span asp-validation-for="DescrizioneRichiesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescrizioneRisposta" class="control-label"></label>
+                <input asp-for="DescrizioneRisposta" class="form-control" />
+                <span asp-validation-for="DescrizioneRisposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

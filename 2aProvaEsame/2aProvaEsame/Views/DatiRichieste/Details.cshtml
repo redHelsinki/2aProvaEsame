@@ -1,0 +1,67 @@
+﻿@model _2aProvaEsame.Models.DatiRichiesta
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DatiRichiesta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Richiedente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Richiedente.CodiceAnagrafica)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Assegnato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Assegnato.CodiceAnagrafica)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataRichiesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataRichiesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataChiusura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataChiusura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatoRichiesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatoRichiesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TitoloRichiesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TitoloRichiesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescrizioneRichiesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescrizioneRichiesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescrizioneRisposta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescrizioneRisposta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DatiRichiestaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

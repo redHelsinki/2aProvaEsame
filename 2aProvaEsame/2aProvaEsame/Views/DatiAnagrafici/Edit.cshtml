@@ -1,0 +1,85 @@
+﻿@model _2aProvaEsame.Models.DatiAnagrafici
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>DatiAnagrafici</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DatiAnagraficiId" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cognome" class="control-label"></label>
+                <input asp-for="Cognome" class="form-control" />
+                <span asp-validation-for="Cognome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecapitoTelefonico" class="control-label"></label>
+                <input asp-for="RecapitoTelefonico" class="form-control" />
+                <span asp-validation-for="RecapitoTelefonico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndirizzoCompleto" class="control-label"></label>
+                <input asp-for="IndirizzoCompleto" class="form-control" />
+                <span asp-validation-for="IndirizzoCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FlagCliente" /> @Html.DisplayNameFor(model => model.FlagCliente)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FlagInterno" /> @Html.DisplayNameFor(model => model.FlagInterno)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FlagFornitore" /> @Html.DisplayNameFor(model => model.FlagFornitore)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodiceAnagrafica" class="control-label"></label>
+                <input asp-for="CodiceAnagrafica" class="form-control" />
+                <span asp-validation-for="CodiceAnagrafica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
